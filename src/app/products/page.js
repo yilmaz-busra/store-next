@@ -1,7 +1,7 @@
 import React from "react";
 
 function Products() {
-  return <div>Products</div>;
+  return <div className="flex-1">Products</div>;
 }
 
 export default Products;
