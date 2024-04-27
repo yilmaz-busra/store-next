@@ -17,7 +17,7 @@ export default function RootLayout({ children }) {
         className={`${manrope.className} min-h-screen  flex flex-col justify-between`}
       >
         <Navbar />
-        {children}
+        <div className="flex-1">{children}</div>
         <Footer />
       </body>
     </html>
