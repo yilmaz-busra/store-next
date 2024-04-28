@@ -1,7 +1,22 @@
+import ProductAllCard from "@/Components/ProductAllCard";
 import React from "react";
+import { allProducts } from "@/api/endpoint";
 
-function Products() {
-  return <div>Products</div>;
+export default async function Products() {
+  const products = await allProducts();
+  return (
+    <div className="flex flex-wrap p-8">
+      {products.map((product) => {
+        return (
+          <ProductAllCard
+            key={product.id}
+            image={product.image}
+            price={product.price}
+            pname={product.title}
+            category={product.category}
+          />
+        );
+      })}
+    </div>
+  );
 }
-
-export default Products;
