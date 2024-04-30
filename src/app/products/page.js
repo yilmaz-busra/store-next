@@ -9,6 +9,7 @@ export default async function Products() {
       {products.map((product) => {
         return (
           <ProductAllCard
+            id={product.id}
             key={product.id}
             image={product.image}
             price={product.price}
