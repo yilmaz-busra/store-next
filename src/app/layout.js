@@ -2,6 +2,7 @@ import { Inter, Manrope } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/Components/Navbar";
 import Footer from "@/Components/Footer";
+import { BasketProvider } from "@/context/basketContext";
 
 const manrope = Manrope({ subsets: ["latin"] });
 
@@ -16,9 +17,11 @@ export default function RootLayout({ children }) {
       <body
         className={`${manrope.className} min-h-screen  flex flex-col justify-between`}
       >
-        <Navbar />
-        <div className="flex-1">{children}</div>
-        <Footer />
+        <BasketProvider>
+          <Navbar />
+          <div className="flex-1">{children}</div>
+          <Footer />
+        </BasketProvider>
       </body>
     </html>
   );
