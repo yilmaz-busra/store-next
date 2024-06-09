@@ -1,16 +1,18 @@
 "use client";
 import React from "react";
 import { useRouter } from "next/navigation";
+import { useBasket } from "@/context/basketContext";
 
 function ProductAllCard({ item }) {
   const router = useRouter();
+  const { addItem } = useBasket();
   return (
-    <div
-      className="xl:w-1/4 md:w-1/2  p-4 "
-      onClick={() => router.push(`products/${item.id}`)}
-    >
+    <div className="xl:w-1/4 md:w-1/2  p-4 ">
       <div class="p-6 rounded-lg">
-        <div className="flex flex-col flex-wrap w-full">
+        <div
+          className="flex flex-col flex-wrap w-full"
+          onClick={() => router.push(`products/${item.id}`)}
+        >
           <a className="block relative h-48 rounded overflow-hidden">
             <img
               alt="ecommerce"
@@ -32,8 +34,13 @@ function ProductAllCard({ item }) {
             </div>
           </div>
         </div>
-        <button className="w-full rounded-full border-2 mt-2 text-white bg-neutral-900 hover:bg-white hover:text-neutral-900 ">
-          Buy
+        <button
+          className="w-full rounded-full border-2 mt-2 text-white bg-neutral-900 hover:bg-white hover:text-neutral-900 "
+          onClick={() => {
+            addItem(item);
+          }}
+        >
+          Add to Basket
         </button>
       </div>
     </div>
