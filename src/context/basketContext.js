@@ -10,10 +10,14 @@ export const BasketProvider = ({ children }) => {
     setBasket([...basket, item]);
   };
 
+  const removeItem = (id) => {
+    setBasket(basket.filter((item) => item.id !== id));
+  };
   const values = {
     basket,
     setBasket,
     addItem,
+    removeItem,
   };
 
   return (
