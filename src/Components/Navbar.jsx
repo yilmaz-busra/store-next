@@ -5,7 +5,7 @@ import { MdFavoriteBorder } from "react-icons/md";
 
 function Navbar() {
   return (
-    <nav className="flex items-center justify-around py-8 text-white bg-neutral-900">
+    <nav className="flex flex-col xl:flex-row  items-center justify-around py-8 text-white bg-neutral-900">
       <div>
         <Link href="/" className="text-2xl font-semibold  tracking-widest ">
           trendey
@@ -13,7 +13,7 @@ function Navbar() {
       </div>
 
       <div>
-        <ul className="flex items-center gap-5 uppercase ">
+        <ul className="flex flex-col xl:flex-row items-center gap-5 uppercase ">
           <li>
             <Link
               href="/"
