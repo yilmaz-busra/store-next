@@ -36,12 +36,7 @@ export default async function Home() {
 
         <div className="flex flex-wrap justify-center py-8">
           {products.slice(0, 3).map((product) => (
-            <ProductCard
-              key={product.id}
-              image={product.image}
-              price={product.price}
-              pname={product.title}
-            />
+            <ProductCard key={product.id} item={product} />
           ))}
         </div>
       </section>
@@ -52,14 +47,7 @@ export default async function Home() {
         </h2>
         <div className="flex flex-wrap justify-center py-4">
           {products.slice(8, 14).map((product) => {
-            return (
-              <ProductCard
-                key={product.id}
-                image={product.image}
-                price={product.price}
-                pname={product.title}
-              />
-            );
+            return <ProductCard key={product.id} item={product} />;
           })}
         </div>
       </section>
