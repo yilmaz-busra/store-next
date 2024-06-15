@@ -23,7 +23,7 @@ function ProductDetail({ image }) {
           className="lg:w-1/2 w-full lg:h-auto h-64 object-contain object-center rounded"
           src={product?.image}
         />
-        <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
+        <div className=" w-full lg:w-1/2 lg:pl-10 lg:py-6 mt-6 lg:mt-0">
           <h2 className="text-sm title-font text-gray-500 tracking-widest">
             {product?.category}
           </h2>
