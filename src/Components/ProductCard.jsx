@@ -8,7 +8,7 @@ function ProductCard({ item }) {
   const { addItem } = useBasket();
   const { addFav } = useFav();
   return (
-    <div className="xl:w-1/4 md:w-1/2 p-4">
+    <div className=" md:w-1/2 xl:w-1/4 p-4">
       <div className=" relative p-6 rounded-lg bg-[#F1F1F1]">
         <button
           className="absolute top-2 right-2"

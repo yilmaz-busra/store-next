@@ -12,7 +12,7 @@ function ProductAllCard({ item, isFav = false }) {
   const { addItem } = useBasket();
   const { addFav, removeFav } = useFav();
   return (
-    <div className="xl:w-1/4 md:w-1/2  p-4 ">
+    <div className="md:w-1/2 xl:w-1/4   p-4 ">
       <div className=" relative p-6 rounded-lg">
         {isFav === false ? (
           <button
