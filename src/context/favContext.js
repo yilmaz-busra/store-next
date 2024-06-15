@@ -7,7 +7,9 @@ export const FavProvider = ({ children }) => {
   const [fav, setFav] = useState([]);
 
   const addFav = (item) => {
-    setFav([...fav, item]);
+    if (fav.find((i) => i.id === item.id)) {
+      return alert("Already in the list");
+    } else setFav([...fav, item]);
   };
 
   const removeFav = (id) => {
