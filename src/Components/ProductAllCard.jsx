@@ -2,13 +2,36 @@
 import React from "react";
 import { useRouter } from "next/navigation";
 import { useBasket } from "@/context/basketContext";
+import { CiHeart } from "react-icons/ci";
+import Link from "next/link";
+import { useFav } from "@/context/favContext";
 
-function ProductAllCard({ item }) {
+function ProductAllCard({ item, isFav = false }) {
   const router = useRouter();
   const { addItem } = useBasket();
+  const { addFav, removeFav } = useFav();
   return (
     <div className="xl:w-1/4 md:w-1/2  p-4 ">
-      <div class="p-6 rounded-lg">
+      <div className=" relative p-6 rounded-lg">
+        {isFav === false ? (
+          <button
+            className="absolute top-2 right-2"
+            onClick={() => {
+              addFav(item);
+            }}
+          >
+            <CiHeart />
+          </button>
+        ) : (
+          <button
+            className="absolute top-2 right-2"
+            onClick={() => {
+              removeFav(item.id);
+            }}
+          >
+            X
+          </button>
+        )}
         <div
           className="flex flex-col flex-wrap w-full"
           onClick={() => router.push(`products/${item.id}`)}

@@ -1,12 +1,23 @@
 "use client";
 import { useBasket } from "@/context/basketContext";
+import { useFav } from "@/context/favContext";
+import { CiHeart } from "react-icons/ci";
 import React from "react";
 
 function ProductCard({ item }) {
   const { addItem } = useBasket();
+  const { addFav } = useFav();
   return (
     <div className="xl:w-1/4 md:w-1/2 p-4">
-      <div class="bg-[#F1F1F1] p-6 rounded-lg">
+      <div className=" relative p-6 rounded-lg bg-[#F1F1F1]">
+        <button
+          className="absolute top-2 right-2"
+          onClick={() => {
+            addFav(item);
+          }}
+        >
+          <CiHeart />
+        </button>
         <img
           className="h-40 rounded w-full object-contain object-center mb-6"
           src={item.image}
