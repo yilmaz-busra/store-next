@@ -3,6 +3,7 @@ import React from "react";
 import { useRouter } from "next/navigation";
 import { useBasket } from "@/context/basketContext";
 import { CiHeart } from "react-icons/ci";
+import { MdOutlineCancel } from "react-icons/md";
 import Link from "next/link";
 import { useFav } from "@/context/favContext";
 
@@ -29,7 +30,7 @@ function ProductAllCard({ item, isFav = false }) {
               removeFav(item.id);
             }}
           >
-            X
+            <MdOutlineCancel />
           </button>
         )}
         <div
