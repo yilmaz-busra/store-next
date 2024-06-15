@@ -3,6 +3,7 @@ import "./globals.css";
 import Navbar from "@/Components/Navbar";
 import Footer from "@/Components/Footer";
 import { BasketProvider } from "@/context/basketContext";
+import { FavProvider } from "@/context/favContext";
 
 const manrope = Manrope({ subsets: ["latin"] });
 
@@ -18,9 +19,11 @@ export default function RootLayout({ children }) {
         className={`${manrope.className} min-h-screen  flex flex-col justify-between`}
       >
         <BasketProvider>
-          <Navbar />
-          <div className="flex-1">{children}</div>
-          <Footer />
+          <FavProvider>
+            <Navbar />
+            <div className="flex-1">{children}</div>
+            <Footer />
+          </FavProvider>
         </BasketProvider>
       </body>
     </html>
