@@ -19,7 +19,7 @@ function Navbar() {
               href="/"
               className="font-light tracking-wider hover:text-[#FFF28D] transition-all delay-150 ease-in-out"
             >
-              Ana Sayfa{" "}
+              Home{" "}
             </Link>
           </li>
           <li>
@@ -27,7 +27,7 @@ function Navbar() {
               href="/products"
               className="font-light tracking-wider hover:text-[#FFF28D] transition-all delay-150 ease-in-out"
             >
-              Ürünler
+              Products
             </Link>
           </li>
           <li>
@@ -35,7 +35,7 @@ function Navbar() {
               href="/"
               className="font-light tracking-wider hover:text-[#FFF28D] transition-all delay-150 ease-in-out"
             >
-              Hakkımızda
+              About Us
             </Link>
           </li>
           <li>
@@ -43,7 +43,7 @@ function Navbar() {
               href="/contact"
               className="font-light tracking-wider hover:text-[#FFF28D] transition-all delay-150 ease-in-out"
             >
-              İletişim
+              Contact
             </Link>
           </li>
         </ul>
